@@ -88,7 +88,7 @@ namespace HgReleaseExtractor
             // 3. Grab the list of changed files since latest tag and tip
             // hg status --added --modified --no-status --rev "'latest tag'::tip"
             Console.WriteLine("Getting added/modified files since latest tag and tip...");
-            exitCode = RunExecutableProcess("hg.exe", "status --added --modified --no-status --rev " + EncodeCommandLineArg(latestTag + "::tip"), repoDirectoryName, out output, out error);
+            exitCode = RunExecutableProcess("hg.exe", "status --added --modified --no-status --rev " + EncodeCommandLineArg($"\"{latestTag}\"::tip"), repoDirectoryName, out output, out error);
             ReportProcessResult(exitCode, output, error);
             if (exitCode != 0)
                 Environment.Exit(exitCode);
