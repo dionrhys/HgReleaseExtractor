@@ -153,8 +153,6 @@ namespace HgReleaseExtractor
             }
             
             Console.WriteLine("Complete!");
-
-            Console.ReadLine();
         }
 
         private static void ReportProcessResult(int exitCode, string output, string error)
